@@ -7,7 +7,7 @@ export const Planets = ({ planets }) => {
     const { store, actions } = useContext(Context)
     const isFavorite = () => { return store.favorites.some(item => item.name === planets.name) ? true : false }
     return (
-        <div className="card mx-2" style={{ minWidth: "250px" }}>
+        <div className="card mx-2 bg-dark text-white" style={{ minWidth: "250px" }}>
             <Link to={`/detail-planet/${planets.uid}`}>
                 <img
                     src={planets.uid == '1'
@@ -32,7 +32,7 @@ export const Planets = ({ planets }) => {
                 <div className="d-flex justify-content-between ">
                     <Link to={`/detail-planet/${planets.uid}`} className="btn btn-primary my-3 btn-lg">Learn more!</Link>
 
-                    <p className={`btn card-text m-3 border px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
+                    <p className={`btn card-text m-3 border-white px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
                         onClick={() => {
                             if (isFavorite()) {
                                 actions.deleteFavoriteCharacter(planets.name)
@@ -42,7 +42,7 @@ export const Planets = ({ planets }) => {
                             }
                         }}
                     >
-                        <i className={`${isFavorite() ? "fa-solid text-danger" : "fa-regular text-warning"} fa-heart`}></i>
+                        <i className={`${isFavorite() ? "fa-solid text-danger" : "fa-regular text-white"} fa-heart`}></i>
                     </p>
 
                 </div>

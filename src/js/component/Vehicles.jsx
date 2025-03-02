@@ -7,7 +7,7 @@ export const Vehicles = ({ vehicle }) => {
     const { store, actions } = useContext(Context)
     const isFavorite = () => { return store.favorites.some(item => item.name === vehicle.name) ? true : false }
     return (
-        <div className="card mx-2" style={{ minWidth: "250px" }}>
+        <div className="card mx-2 bg-dark text-white" style={{ minWidth: "250px" }}>
             <Link to={`/detail-vehicle/${vehicle.uid}`}>
                 <img
                     src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/${vehicle.type}/${vehicle.uid}.jpg`}
@@ -29,7 +29,7 @@ export const Vehicles = ({ vehicle }) => {
                     <Link to={`/detail-vehicle/${vehicle.uid}`} className="btn btn-primary my-3 btn-lg">Learn more!</Link>
 
                     {/* <p className="btn card-text m-3 border border-warning px-2" */}
-                    <p className={`btn card-text m-3 border px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
+                    <p className={`btn card-text m-3 border-white px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
 
                         onClick={() => {
                             if (isFavorite()) {
@@ -41,7 +41,7 @@ export const Vehicles = ({ vehicle }) => {
                         }
                         }
                     >
-                        <i className={`${isFavorite() ? "fa-solid text-danger" : "fa-regular text-warning"} fa-heart`}></i>
+                        <i className={`${isFavorite() ? "fa-solid text-danger" : "fa-regular text-white"} fa-heart`}></i>
                     </p>
 
                 </div>

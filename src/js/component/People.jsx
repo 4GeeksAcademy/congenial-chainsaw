@@ -8,7 +8,7 @@ export const People = ({ people }) => {
     const isFavorite = () => { return store.favorites.some(item => item.name === people.name) ? true : false }
 
     return (
-        <div className="card mx-2" style={{ minWidth: "250px" }}>
+        <div className="card mx-2 bg-dark text-white" style={{ minWidth: "250px" }}>
             <Link to={`/detail-people/${people?.uid}`}>
 
                 <img
@@ -31,7 +31,7 @@ export const People = ({ people }) => {
                     <Link to={`/detail-people/${people?.uid}`} className="btn btn-primary my-3 btn-lg">Learn more!</Link>
 
 
-                    <p className={`btn card-text m-3 border px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
+                    <p className={`btn card-text m-3 border-white px-2 ${isFavorite() ? "border-danger" : "border-warning"}`}
 
                         onClick={() => {
                             if (isFavorite()) {
@@ -43,7 +43,7 @@ export const People = ({ people }) => {
                             }
                         }}
                     >
-                        <i className={`${isFavorite() ? "fa-solid text-danger " : "fa-regular text-warning"} fa-heart`}></i>
+                        <i className={`${isFavorite() ? "fa-solid text-danger " : "fa-regular text-white"} fa-heart`}></i>
 
 
 

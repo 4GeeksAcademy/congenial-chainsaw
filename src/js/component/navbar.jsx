@@ -8,7 +8,7 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light sticky-top" >
+		<nav className="navbar navbar-light bg-dark sticky-top" >
 			<div className="container d-flex p-0">
 
 				<div className="ml-auto">
@@ -18,10 +18,6 @@ export const Navbar = () => {
 
 					</Link>
 				</div>
-				<div className="ml-auto mx-0 p-0 d-flex">
-
-					<Link to="/favorites" className="btn btn-warning mx-2">Favorites</Link>
-
 					<div className="dropdown">
 						<button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Favorites {store.favorites.length}
@@ -52,7 +48,7 @@ export const Navbar = () => {
 						</ul>
 					</div>
 				</div>
-			</div>
+
 		</nav>
 	);
 };
